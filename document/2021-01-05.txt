@@ -1,1 +1,18 @@
-this is first file
+Today's work :
+
+1) study about version control system
+
+2) practice on some command like :
+$ git clone https://github.com/meetpatel5393/cybercom
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+$ git init:initialise the folder
+
+3) practice on remote access command :
+$ git remote add remote_name url
+
+reset-url command for remote aceess
+remove remote command 
+
+
+
