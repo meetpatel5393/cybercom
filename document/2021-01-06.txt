@@ -1,0 +1,36 @@
+Today's work :  
+
+1) Remote repository access practice :
+perform task related remote repository , like how can we access someone remote repo. , how we set remote origin in our git bash , how can we push on that repository , how to pull from that repository. this whole task take time because there was some issue related usename and password which is because previous remote access repo. config. isn't changed , letter after doing some research it is resolved.
+
+2) some command like :
+$git remote remove remote_name - using this command we can remove that remote from our git bash.
+
+$git remote set-url "url": using this command we can set remote url.
+
+$git log : using this command we can see our history of commit.
+
+$git log -number : these comand show number of history.
+
+execute $git diff command to see which code , i add in file after last commit.
+
+Also i execute add command to see their multiple use's like to tracked the file and to see their modifie status.
+
+$git restore file_name : using this comand we can restore deleted file which i practice
+
+$git branch : this command is use to see all available branch 
+
+create branch and push content on that brach
+
+delete branch using $git branch -d branch_name command
+
+$git revert --abort : command to abort reverting 
+
+git branch -D branch_name: this command is used when
+any branch is not fully merged.
+
+git-show : command show log history about HEAD
+
+3) Given Task :
+first of all we have one branch called master , master branch have some content in it after that we create another branch called master1 , then we commit in master branch that will generate one checksome number for commit 
+after that we push all the content into master1 and merge both branch then , we check log from both branch that have same commit checksum (HEAD ->master and HEAD -> master1) with one merge checksum which i excatly don't know what is it.
