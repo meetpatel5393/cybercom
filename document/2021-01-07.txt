@@ -1,0 +1,19 @@
+2021-01-07 :
+
+Command practice :
+
+1) git diff : practice on this command to check difference of content using two commit number
+
+2) giff diff -HEAD : this command work same as git diff old commit - new commit , this command check different between content of last commit and the latest content (without commit that) , and we don't need to add that file  , after change we can directly check the difference
+
+3) $ git diff HEAD:test.txt abc.txt
+- this command show different between two file , if we change content of the file and then we want to see different then commit of that file is necesary
+
+4) $ git diff --color-words commit_id1 commit_id2 : this command show that if new content is add then it's show that content in green color otherwise if content is delet then it content show in red color
+
+5) git commit -m "msg" filename : this command only push single file which we are specifiy at the end of this command
+
+6) git add --all : to add all file at a time
+
+7) Resolve conflict practice while merging
+
