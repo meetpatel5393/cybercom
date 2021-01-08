@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Js coding challenge 2</title>
+</head>
+<script type="text/javascript">
+	var john_team_score = [89 , 120 , 103] , mike_team_score = [116 , 94 , 123] , avg_of_john_teamscore , avg_of_mike_teamscore;
+
+	function calculate_score(score)
+	{
+		res = (score.reduce((a, b) => a + b))/3;
+		return res;
+	}
+
+	//find average score of both team
+	avg_of_john_teamscore = calculate_score(john_team_score);
+	avg_of_mike_teamscore = calculate_score(mike_team_score);
+
+	if(avg_of_mike_teamscore>avg_of_john_teamscore)
+		console.log("Winner is : Mike " + avg_of_mike_teamscore);
+	else if(avg_of_mike_teamscore == avg_of_john_teamscore)
+		console.log("Match draw");
+	else
+		console.log("Winner is : John " + avg_of_john_teamscore);
+
+	//change score of both team
+	john_team_score = [116 , 94 , 123];
+	mike_team_score = [89 , 120 , 103];
+
+	//check winner after change score
+	avg_of_john_teamscore = calculate_score(john_team_score);
+	avg_of_mike_teamscore = calculate_score(mike_team_score);
+
+	if(avg_of_mike_teamscore>avg_of_john_teamscore)
+		console.log("Winner is : Mike " + avg_of_mike_teamscore);
+	else if(avg_of_mike_teamscore == avg_of_john_teamscore)
+		console.log("Match draw");
+	else
+		console.log("Winner is : John " + avg_of_john_teamscore);
+
+
+	//add mary
+	mary_team_score = [97 , 134 , 105];
+	avg_of_mary_teamscore = calculate_score(mary_team_score);
+
+	if (avg_of_john_teamscore > avg_of_mike_teamscore && avg_of_john_teamscore > avg_of_mary_teamscore) 
+	{
+        console.log("Winner is : John " + avg_of_john_teamscore);
+	}
+    else if (avg_of_mike_teamscore > avg_of_john_teamscore && avg_of_mike_teamscore > avg_of_mary_teamscore) 
+    {
+        console.log("Winner is : Mike " + avg_of_mike_teamscore);
+    }
+    else if (avg_of_mary_teamscore > avg_of_john_teamscore && avg_of_mary_teamscore > avg_of_mike_teamscore) 
+    {
+        console.log("Winner is : Mary " + avg_of_mary_teamscore);
+    }
+
+    //match tie
+    if(avg_of_john_teamscore == avg_of_mike_teamscore)
+    {
+    	console.log("Tie with score :" + avg_of_john_teamscore);
+    }
+    else if(avg_of_john_teamscore == avg_of_mary_teamscore)
+    {
+    	console.log("Tie with score :" + avg_of_john_teamscore);
+    }
+    else if(avg_of_mary_teamscore == avg_of_mike_teamscore)
+    {
+    	console.log("Tie with score :" + avg_of_mike_teamscore);
+    }
+
+</script>
+<body>
+</body>
+</html>
