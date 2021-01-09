@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>table1</title>
+</head>
+<style type="text/css">
+	table , th , td
+	{
+		border:1px solid rgba(0,0,0,0.4);
+	}
+	table
+	{
+		background-color: lightgrey;
+	}
+	th ,td
+	{
+		background-color: white;
+		border-bottom: 1px solid rgba(0,0,0,0);
+	}
+</style>
+<body>
+	<!-- table -->
+	<table>
+		<!-- heading -->
+		<tr>
+			<th>Heading 1</th>
+			<th>Heading 2</th>
+			<th>Heading 3</th>
+		</tr>
+
+		<!-- data -->
+		<tr>
+			<td style="vertical-align: top;"><center>cell 1 test</center></td>
+			<td>cell 2 test A <br> cell 2 test B</td>
+			<td style="vertical-align: top;"><center>cell 3 text</center></td>
+		</tr>
+		<tr>
+			<td>&nbsp;&nbsp; a long piece oof cell text all one line without abreak &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td> cell text</td>
+			<td style="text-align: right;">cell text aligned right</td>
+		</tr>
+		<tr>
+			<td><center><b>cell text</b></center></td>
+			<td></td>
+			<td style="background-image:  linear-gradient(to right, blue , lightgrey);">graphic background &nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="3"><center><b>Mid-table Heading</b></center></td>
+		</tr>
+		<tr>
+			<td>Things to do today</td>
+			<td rowspan="5"><center><b><span style="writing-mode: vertical-lr; text-orientation: upright;">WEEK</span><br><br>26</center></b></td>
+			<td>Monday</td>
+		</tr>
+		<tr>
+			<td style="background-color: red;">Things to do on tuesday</td>
+
+			<td style="background-color: red;">Tuesday</td>
+		</tr>
+		<tr>
+			<td>Things to do today</td>
+
+			<td>Wednesday</td>
+		</tr>
+		<tr>
+			<td style='background-color: green;color:white;'><center>Things to do today</center></td>
+
+			<td style='background-color: green;color:pink;'>Thursday</td>
+		</tr>
+		<tr>
+			<td>Stuff to tidy up <i><b>before the weekend!!!</b></i></td>
+
+			<td>Friday</td>
+		</tr>
+		
+	</table>
+</body>
+</html>
