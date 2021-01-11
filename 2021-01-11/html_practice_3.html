@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Html practice 3</title>
+</head>
+<style type="text/css">
+	table
+	{
+		border:1px solid black;
+		text-align: center;
+		background-color: black;
+	}
+	td , th
+	{
+		border:1px solid black;
+		background-color: white;
+		padding: 8px;
+	}
+	.table2 th , .table2 td ,.table2
+	{
+		border:2px solid black;
+		background-color: white;
+	}
+	p{
+		margin: 0;
+		padding: 0;
+		margin-left: 130px;
+	}
+</style>
+<body>
+	<p>Example : Nested</p>
+	<!-- table -->
+	<table>
+		<tr>
+			<th rowspan="2" colspan="2">CI</th>
+			<th rowspan="2">ALL <br> Genders</th>
+			<th colspan="2">By Gender</th>
+		</tr>
+		<tr>
+			<td>
+				<!-- nested table -->
+				<table class="table2">
+					<tr>
+						<th>Males</th>
+						<th>Females</th>
+					</tr>
+					<tr>
+						<td>9215604</td>
+						<td>4512358</td>
+					</tr>
+				</table>
+			</td>
+		</tr>	
+		<tr>
+			<th>Rural</th>
+			<td>6521458</td>
+			<td>4215389</td>
+			<td>4152348</td>
+		</tr>
+	</table>
+</body>
+</html>
