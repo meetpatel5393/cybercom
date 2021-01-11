@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Js coding challenge 1</title>
+</head>
+<script type="text/javascript">
+	var mark_mass , john_mass , mark_height , john_height , BMI_of_mark , BMI_of_john , bool_var;
+
+	//info of mark
+	mark_mass = 60;
+	mark_height = 1.8288 ;
+
+	//info of john
+	john_mass = 70;
+	john_height = 1.76784 ;
+
+	//Calculate BMI of mark and john
+	BMI_of_mark = mark_mass / (mark_height * mark_height);
+	BMI_of_john = john_mass / (john_height * john_height);
+
+	//check whether BMI of mark is higher than john
+	bool_var = BMI_of_mark > BMI_of_john ;
+
+	console.log("Is Mark's BMI higher than John's? " + bool_var);
+</script>
+<body>
+
+</body>
+</html>
