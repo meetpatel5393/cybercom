@@ -1,0 +1,19 @@
+Today's work (2021-01-12) :
+
+1) First  of all today i have been watched all the video from today task.
+
+2) Practice from that video :
+
+a) practice on hoisting , in this practice i have learn that variable and function we can access before if define but expresion we can't access before it define , same as variable define using let keyword we can't access before it's define same as  const variable we can't access before its define it give reference error.
+
+b) second practice i have done on scoping , in this scoping practice i have learn that global variable we can access any where we want but variable define inside function have only scope of that function , outside function we cant access that variable ,if funtion have another nested funtion so in nested funtion we can access variable of that parent function.
+
+c) now after practice on both of the topic given above , the new interesting topic of  'this' keyword i have learn , in this topic i have learn that , this keyword default value have window object , simply print this is show us window object property , but if we create our custom object and then using that object name if we call expresion so inside expresion this keyword is reffered as a current object which is called that expresion.also i have learn method borrowing which is very useful and reduce developer code by using already define method.
+
+d) In object practice , object creation is too easy in this practice of object i have learn one new thing that is object variable access , one method of access variable of object is everyone know but today i have learn new method(obj_name['var_name']) which is same like associative array variable access.
+
+e) In loop practice , most of that concept is already we have learn in c , c++ , java aslo in php so i didn't practice too mush on that.
+
+f) after this some very unique , intersting and very helpfull concept of localstorage and sessionstorage i have learn which is i dont't know until you give us this task , so in this topic i do some practice and see where it's show on browser when we store some data into localstorage and also sessionstorage , i know one thing that using this concept we can keep user active on our site if  user close browser , like if we use session so when user close browser some data of user which we store in session will be removed so again user do all the step from starting to get data back.
+
+g) in the end i learn about meta tag which have mutliple attribute like name , content etc . so in  meta tag name='keyword' use to define keyword for our site which is use in SEO . and same as there are many use of meta tag which i mentioned in html practice file with there use so i didn't mention here.
