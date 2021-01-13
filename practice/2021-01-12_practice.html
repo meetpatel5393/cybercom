@@ -13,17 +13,21 @@
 	<h2 id="result">meet</h2>
 </body>
 <script type="text/javascript">
-
 	//local storage -> its like permanant storage until we delete it
 	//store name in localstorage and show it to on display.
-	// if (typeof(Storage) !== "undefined") {
-	//   	// Code for localStorage/sessionStorage.
-	//   	localStorage.setItem("name","meet kapadiya"); 	
-	//   	document.getElementById("result").innerHTML = localStorage.getItem("name");
-	// } else {
-	//   	// Sorry! No Web Storage support..	
-	//  	alert('not support');
-	// }
+	if (typeof(Storage) !== "undefined") {
+	  	// Code for localStorage/sessionStorage.
+	  	localStorage.setItem("name","meet kapadiya"); //store key and value in localstorage.
+	  	localStorage.setItem("city","rajkot"); 	
+	  	document.getElementById("result").innerHTML = localStorage.getItem("name");
+	  	//localStorage.removeItem("name"); //remove item from localstorage
+	  	//localStorage.clear(); // remove all localstorage item
+	  	//console.log(localStorage.length); // show how many value store in storage
+	  	//console.log(localStorage.key(0)); //localStorage.key(0) -> return keyname of given index value.
+	} else {
+	  	// Sorry! No Web Storage support..	
+	 	alert('not support');
+	}
 
 	// //store how many time we click button , here it store how many time page is refresh
 	// if (localStorage.clickcount) {

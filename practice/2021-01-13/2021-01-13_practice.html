@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2021-01-13 Practice</title>
+</head>
+<body>
+	<h2 class="p1">2021-01-13 Practice</h2>
+	<p class="p1">Pratice on DOM</p>
+	<button id='btn1' onclick="changeColor()">change color</button>
+	<script type="text/javascript">
+		// method of DOM to select element	
+		function changeColor(){
+			//document.getElementById('btn1').style.color= 'red'; //get element by it's id
+
+			// var x = document.getElementsByTagName("p"); // get element by it's tag name
+			// x[0].style.color = 'red';
+
+			var x = document.getElementsByClassName("p1"); //get element by class name
+			for (var i=0; i < x.length; i++) { // if want to apply any changes to all tag which have same class so we want for loop
+			    x[i].style.color = 'red';
+			}
+		}
+	</script>
+</body>
+</html>
