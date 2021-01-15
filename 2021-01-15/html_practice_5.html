@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Html practice 5</title>
+</head>
+<style type="text/css">
+	th{
+		border:1px solid black;
+		background-color: rgb(179, 255, 179);
+	}
+	table{
+		border:2px solid black;
+		padding: 3px;
+	}
+	td{
+		padding: 5px;
+		vertical-align: text-top;
+		border:1px solid black;
+	}
+	tr{
+		padding: 0;
+		margin: 0;
+	}
+	.first_col{
+		background-color: rgb(153, 179, 255);
+		width: 120px;
+	}
+	.second_col{
+		background-color: rgb(230, 255, 204);
+		width: 220px;
+	}
+	.third_col{
+		background-color: rgb(255, 153, 255);
+		width: 100px;
+	}
+	.forth_col{
+		background-color: rgb(255, 255, 153);
+		width: 160px;
+	}
+	.uni_col1 .second_col , .uni_col1 .third_col ,.uni_col1 .forth_col{
+		border-top: none;
+	}
+	.uni_col2 .second_col , .uni_col2 .third_col ,.uni_col2 .forth_col{
+		border-bottom: none;
+	}
+	u{
+		color: blue;
+	}
+	ul{
+		padding-inline-start: 20px;
+	}
+	li{
+		text-align: left;
+		padding-left: 30px;
+	}
+</style>
+<body>
+	<h3>Stem Cell Companies Active in Ophthalmology</h3>
+	<table cellspacing="0">
+		<tr> <!-- table heading name row -->
+			<th>Company</th>
+			<th>Collaborator(s)</th>
+			<th>Cell Type</th>
+			<th>Application</th>
+		</tr>
+
+		<tr>
+			<td class="first_col"><b>Advanced Cell Technology Inc. (ACT)</b></td>
+			<td class="second_col">Oregon Health & Science University (OHSU)
+				<ul>
+					<li>Moorfields Eye Hosp.</li>
+					<li>UCLA/Jules Stein</li>
+					<li>Wills Eye Hospital</li>
+					<li>Aberdeen Royal Infirm</li>
+					<li>Bascom Palmer</li>
+				</ul>
+			</td>
+			<td class="third_col">hESCs</td>
+			<td class='forth_col'>RPE cell for retinal diseases , including Dry AMD <u>NCTO1344993</u> and Stargaedt's <u>NCT01345006</u> <u>NCT01469832</u></td>
+		</tr>
+
+		<tr>
+			<td class="first_col"><b>AstraZeneca</b></td>
+			<td class="second_col">Univ. Collage London (UCL)</td>
+			<td class="third_col">hESCs</td>
+			<td class='forth_col'>Diabetic Retinopathy</td>
+		</tr>
+
+		<tr>
+			<td class="first_col"><b>Centecor/J&J w/IScience Interventional</b></td>
+			<td class="second_col">
+				<ul>
+					<li>Retina Institue of CA</li>
+					<li>Wills Eye Hospital</li>
+				</ul>
+			</td>
+			<td class="third_col">Adult SCs (CNTO 2746 from umbilical cord fluid)</td>
+			<td class='forth_col'>RPE cell for GA (atrophic dry AMD) <u>NCT01226628</u></td>
+		</tr>
+
+		<tr>
+			<td class="first_col"><b>Cell CureNeurosciences</b></td>
+			<td class="second_col">TEVA</td>
+			<td class="third_col">hESCs</td>
+			<td class='forth_col'>RPE cell for dry AMD</td>
+		</tr>
+
+		<tr>
+			<td class="first_col"><b>CellSeed France SARL</b></td>
+			<td class="second_col">FGK Clinical Research GmbH
+				<ul>
+					<li>Universitatsklinkum , Erlangen , Germany</li>
+				</ul>
+			</td>
+			<td class="third_col">oral muscosa eplithelial cells</td>
+			<td class='forth_col'>CAOMECS* for Corneal tissue repair in those with limbal cell deficiencies <u>NCT01489501</u></td>
+		</tr>
+
+		<tr>
+			<td class="first_col"><b>Fundacion Clinic per a la Recerca Bimedia (Spain)</b></td>
+			<td class="second_col">
+				<ul>
+					<li>Hospital Clinic Barcelona</li>
+					<li>Instituto Univ. Barraquer</li>
+					<li>Instituto de Microcirugia Ocular</li>
+				</ul>
+			</td>
+			<td class="third_col">sclerocomeal progenitor cells from the limbus</td>
+			<td class='forth_col'>Replacement of damaged corneal cells <u>NCT01470573</u></td>
+		</tr>
+
+		<tr>
+			<td class="first_col"><b>General Hosp of the Chinese People's Armed Police Force (China)</b></td>
+			<td class="second_col"></td>
+			<td class="third_col">unknown</td>
+			<td class='forth_col'>Optic Nerve Atrophy <u>ChiCTR-TNRC-1101491</u></td>
+		</tr>
+
+		<tr class="uni_col2">
+			<td class="first_col" rowspan="2"><b>International Stem Cell Corp. (ISCO)</b></td>
+			<td class="second_col">CytoCor -
+				<ul>
+					<li>Absorption Systems - US</li>
+					<li>Sankara Nethralya- India</li>
+					<li>Automation Partnership - UK</li>
+				</ul>
+			</td>
+			<td class="third_col">hpSCs</td>
+			<td class='forth_col'>Corneal tissue for transplantation into degenerated corneas</td>
+		</tr>
+
+		<tr class="uni_col1">
+			<td class="second_col">CytoRet - UC Irvine</td>
+			<td class="third_col">hpSCs</td>
+			<td class='forth_col'>RPE cells and layered rentinal strucutre for AMD</td>
+		</tr>
+	</table>
+</body>
+</html>
