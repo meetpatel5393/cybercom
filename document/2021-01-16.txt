@@ -1,0 +1,14 @@
+2021-01-16
+
+Today i have been watched daily task video and practice on that  , like...
+
+1) string in javascript like in ES5 how can we print string with variable and  in ES6 how can we print string this two different - different method i have practice on.
+
+2) second topic is about data privacy like in ES5 there is Immediately Invoked Function Expressions (IIFE) and in ES6 there is block scope so doing practice on this topic i have been seen difference between function scope and block scope , let and const keyword provide us block scope where var keyword provide us function scope.
+
+3) Now there is some method of which is use to call method of another object which i have seen those method are 'call() , bind() ,apply()' on this method i have do practice , in bind method bind the argument like if any one argument will be constant for all function call but second argument change so we can bind first argument. , bind allows us to create copy of function with preset argument. so we don't need to specifie repeated argument again and again. 'call()' and 'apply()' this both method are quite similar with one difference that is , in apply method there is only two argument , first is object and second is array of parameter.but in call method there are so many argument which include object and parameter.
+
+4) The interesting topic about function returning function which i reffer and practice on that.
+
+All the practice which i have do is mentioned in practice/2021-01-16 folder ...
+
