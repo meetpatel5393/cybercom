@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2021-01-16 Practice</title>
+</head>
+<script type="text/javascript">
+
+	//<-----------------------------------------------------------------------
+	//String in ES5
+	var firstname = 'meet' ,lastname = 'kapadiya';
+	console.log("This is " + firstname + " " + lastname + ' End of string');
+
+	//String in ES6
+	console.log(`This is ${firstname} ${lastname} end of string`);
+
+	//----------------------------------------------------------------------->
+
+	//<-----------------------------------------------------------------------
+	//ES5 have IIFE for Data privacy
+	(function(username1){
+		//var username1 = 'meet kapadiya';
+		console.log(username1);
+	})('meet kapadiya');
+
+	//ES6 have block scope for data privacy
+	{
+		//here we can't access variable a3 and a4 outside block , which is declare using let and const keyword bcoz those variable have block scope.but we can access a5 variable outside block bcoz it have function scope.
+		let a3 = 12;
+		const a4 = 13;
+		var a5 = 15;
+	}
+	//----------------------------------------------------------------------->	
+
+	//<-----------------------------------------------------------------------
+	//different between var keyword and let , const keyword
+	//variable define using var keyword have function scope. //ES5
+	//variable define using let and const keyword have block scope. //ES6
+	// let i = 12;
+	// for (let i = 0; i < 5; i++) {
+	// 	console.log(i);
+	// }
+	// console.log(i);
+
+	// var j = 12;
+	// for (var j = 0; j < 5; j++) {
+	// 	console.log(j);
+	// }
+	// console.log(j);
+
+	function show_variable(str){
+		const a1 = 12;
+		let a2;
+		if(str == 's'){
+			a2 = 13;
+			console.log(a1);
+		}
+		console.log(a2);
+	}
+	show_variable('s');
+	//----------------------------------------------------------------------->
+
+	//<-----------------------------------------------------------------------
+	//call method
+	var john = {
+		name:'john',
+		age:26,
+		showdata: function(job,city){
+			console.log(this.name +" "+ this.age +" "+ job +" "+ city);
+		}
+	};
+	john.showdata('teacher' , 'gondal');
+
+	var jack = {
+		name:'jack',
+		age: '30'
+	};
+	john.showdata.call(jack , 'painter' , 'rajkot');//here in call method we pass object name (jack) so in showdata method 'this' reffer jack object.
+
+	john.showdata.apply(jack, ['painter' , 'shapar']); //this is similar to call method with one difference that is apply method tak only two argument one is object and other is array (argument array).
+
+	var johnjob = john.showdata.bind(john , 'teacher');//bind method bind the argument like if any one argument will be constant for all function call but second argument change so we can bind first argument. , bind allows us to create copy of function with preset argument.
+	johnjob('america');
+	johnjob('dubai');
+	//----------------------------------------------------------------------->
+
+	//<-----------------------------------------------------------------------
+	//clouser
+	function useraccess(usertype){
+		return function(name){
+			console.log(usertype + ' -> ' + name);
+		}
+	}
+	var authuser = useraccess('localuser');
+	authuser('meet kapadiya');
+	authuser('krunal ambaliya');
+	//----------------------------------------------------------------------->
+
+	//<-----------------------------------------------------------------------
+	//Immediately Invoked Function Expressions (IIFE) --> it's main use if data privacy
+	(function(username1){
+		//var username1 = 'meet kapadiya';
+		console.log(username1);
+	})('meet kapadiya');
+	//----------------------------------------------------------------------->
+
+	//<-----------------------------------------------------------------------
+	//First Class Function Function Returning Functions
+	function userlogin(usertype){
+		if(usertype === 'registeruser'){
+			return function(username){
+				//console.log(name + ', you only require username and password for access service');
+				document.getElementById('hh2').innerHTML = username + ' you fill this form to access your account' +'<br>Username : <input type="text"> <br> Password : <input type="password">';
+			}
+		}
+		else if(usertype === 'admin'){
+			return function(username){
+				//console.log(name + ', you require username , password and secret key for access service');
+				document.getElementById('hh2').innerHTML = username + ' you fill this form to access your account' +'<br>Username : <input type="text"> <br> Email : <input type="email"> <br> Password : <input type="password">';
+			}
+		}
+		else{
+			return function(){
+				//console.log('for visitor there is no need to give any credential information to access service');
+				document.getElementById('hh2').innerHTML = "for visitor there is no need to give any credential information to access service";
+			}
+		}
+	}
+	// var userdetail = userlogin('registeruser'); //first method
+	// userdetail('krunal');
+	// userlogin('admin')('meet'); //second method to access function
+	//---------------------------------------------------------------------->
+</script>
+<body>
+	<h1>First Class Function Function Returning Functions</h1>
+	<h2 id="hh2">UserType</h2>
+	<button onclick="userlogin('admin')('krunal')">Get Form</button>
+</body>
+</html>
