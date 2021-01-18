@@ -6,6 +6,26 @@
 <body>
 	<script type="text/javascript">
 
+		A = { x: 'abc' ,
+		method1: function(){
+			console.log("done");
+		}}
+		// for (x in A)
+		// {
+		// 	console.log(A.x);
+		// }
+		//console.log(A.method1());
+
+		var y = {
+			getData: 'mk',
+			function1 : function(){
+				console.log(this);
+			}
+		}
+		y.function1();
+
+
+
 		// -------------------------------------------------------------------------------------------------------------
 		//premitives and object
 
@@ -54,16 +74,16 @@
 
 		// -------------------------------------------------------------------------------------------------------------
 		//first method to create object
+		
+		// var personclass = function(name,city,age){ //Creating object function constructors
+		// 	this.name = name;
+		// 	this.city = city;
+		// 	this.age = age;
 
-		var personclass = function(name,city,age){ //Creating object function constructors
-			this.name = name;
-			this.city = city;
-			this.age = age;
-
-			this.show_detail = function(){
-				console.log(this);
-			}
-		}
+		// 	this.show_detail = function(){
+		// 		console.log(this);
+		// 	}
+		// }
 		// personclass.prototype.show_detail = function() { //create prototype
 		// 	console.log(this);
 		// };
@@ -74,11 +94,11 @@
 
 		//Prototype is fast and memory efficient.When you attach methods to object instances, then each instance will have it's own copy of the method. This involves the system processing time and the memory. ... This doesn't need as much processing time and memory when compared to the above approach.
 
-		var meet = new personclass('meet','rajkot',21); //create new object
-		var krunal = new personclass('krunal','rajkot',22); 
-		meet.show_detail();
-		krunal.show_detail();
-		console.log(meet.show_detail == krunal.show_detail);
+		// var meet = new personclass('meet','rajkot',21); //create new object
+		// var krunal = new personclass('krunal','rajkot',22); 
+		// meet.show_detail();
+		// krunal.show_detail();
+		// console.log(meet.show_detail == krunal.show_detail);
 		// -------------------------------------------------------------------------------------------------------------
 	</script>
 	<h2>Creating object function constructors</h2>
