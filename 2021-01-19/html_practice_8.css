@@ -1,0 +1,25 @@
+input{
+	width: 100%;
+	font-size: 13px;
+}
+label{
+
+	float: right;
+	padding-right: 20px;
+}
+.row{
+	justify-content: center;
+}
+h5{
+	padding-left: 20px;
+}
+select{
+	width: 100%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+#form_1{
+	background-color: rgba(0,0,0,0.1);
+}

@@ -1,0 +1,23 @@
+#address_part , #additional_details_part ,#interest_part{
+	border:1px solid black;
+}
+input{
+	padding: 3px;
+}
+span{
+	color:black;
+	background-color: white;
+	width: 100px;
+	margin: auto;
+	position: absolute;
+	top: -15px;
+}
+#additional_details_part span{
+	width: 135px;
+}
+#interest_part span{
+	width: 70px;
+}
+textarea{
+	width: 190px;
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Html practice 8</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="html_practice_8.css">
+	<script type="text/javascript" src="html_practice_8.js"></script>
+</head>
+<body onload="get_data()">
+	<div class="container-fluid m-0 p-3">
+		<form action="information.php" method="post" class="container-fluid m-0 p-1 col-md-6 border mx-auto" id="form_1">
+			<!-- Personal Information -->
+			<div class="container-fluid m-0 mb-1 p-2">
+				<h5>Personal Information</h5>
+				<div class="container-fluid m-2 p-0 pt-2 row"> <!-- first name -->
+					<div class="col-md-3 m-0 p-0">
+						<label>First name</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<input type="text" name="firstname" required="">	
+					</div>
+				</div>
+				<div class="container-fluid m-2 p-0 row "> <!-- last name -->
+					<div class="col-md-3 m-0 p-0">
+						<label>Last name</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<input type="text" name="lastname">	
+					</div>
+				</div>
+				<div class="container-fluid m-2 p-0 row"> <!-- date of birth -->
+					<div class="col-md-3 m-0 p-0">
+						<label>Date of Birth</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<div class="row m-0 p-0">
+							<div class="col-4 m-0 p-0 pr-1">
+								<select name="month" id="dob_month" required>
+									<option value="" selected="" disabled="">Month</option>
+								</select>
+							</div>
+							<div class="col-4 m-0 p-0 pr-1">
+								<select name="day" required id="dob_day">
+									<option value="" selected="" disabled="">Day</option>
+								</select>
+							</div>
+							<div class="col-4 m-0 p-0">
+								<select name="year" required id="dob_year">
+									<option value="" selected="" disabled="">Year</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid m-2 p-0 row"> <!-- gender -->
+					<div class="col-md-3 m-0 p-0">
+						<label>Gender</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<select name="gender" id="gender">
+							<option value="" selected="" disabled="">Choose a gender</option>
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+							<option value="Other">Other</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<!-- Account Information -->
+			<div class="container-fluid m-0 mb-1 p-2">
+				<h5>Account Information</h5>
+				<div class="container-fluid m-2 p-0 pt-2 row"> <!-- email -->
+					<div class="col-md-3 m-0 p-0">
+						<label>Email</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<input type="email" name="email" required="">	
+						<p class="p-0 m-0">(Your email address will be your username)</p>
+					</div>
+				</div>
+				<div class="container-fluid m-2 p-0 row"> <!-- re enter email -->
+					<div class="col-md-3 m-0 p-0">
+						<label>Re-type Email</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<input type="email" name="reenteremail" required="">	
+					</div>
+				</div>
+				<div class="container-fluid m-2 p-0 row "> <!-- password -->
+					<div class="col-md-3 m-0 p-0">
+						<label>Password</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<input type="password" name="password" required="" minlength="8" pattern="(?=.*\d)(?=.*[a-z]).{8,}">
+						<p class="p-0 m-0">(Min. 8 character ,1 number ,case-sensitive)</p>	
+					</div>
+				</div>
+				<div class="container-fluid m-2 p-0 row"> <!-- re enter password -->
+					<div class="col-md-3 m-0 p-0">
+						<label>Re-type Password</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<input type="password" name="reenterpassword" required="" minlength="8" pattern="(?=.*\d)(?=.*[a-z]).{8,}">	
+					</div>
+				</div>
+				<div class="container-fluid m-2 p-0 row"> <!-- security question -->
+					<div class="col-md-3 m-0 p-0">
+						<label>Security Question</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<select name="security_que" id="security_que">
+							<option value="" selected="" disabled="">Choose a security question</option>
+							<option value="What is my nick name ?">What is my nick name ?</option>
+							<option value="what is favorite person ?">what is favorite person ?</option>
+							<option value="what is my luck number ?">what is my luck number ?</option>
+						</select>
+					</div>
+				</div>
+				<div class="container-fluid m-2 p-0 row"> <!-- security answer -->
+					<div class="col-md-3 m-0 p-0">
+						<label>Security Answer</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<input type="text" name="securityqueans">	
+						<p>(Not case-sensitive)</p>
+					</div>
+				</div>
+			</div>
+			<!-- Contact Information -->
+			<div class="container-fluid m-0 p-2">
+				<h5>Contact Information</h5>
+				<div class="container-fluid m-2 p-0 pt-2 row"> <!-- address -->
+					<div class="col-md-3 m-0 p-0">
+						<label>Address</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<input type="text" name="address">	
+					</div>
+				</div>
+				<div class="container-fluid m-2 p-0 row "> <!-- city -->
+					<div class="col-md-3 m-0 p-0">
+						<label>City</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<input type="text" name="city">	
+					</div>
+				</div>
+				<div class="container-fluid m-2 p-0 row"> <!-- state -->
+					<div class="col-md-3 m-0 p-0">
+						<label>State</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<select name="state">
+							<option value="" selected="" disabled="">Choose a state</option>
+							<option value="Gujarat">Gujarat</option>
+							<option value="Maharastra">Maharastra</option>
+							<option value="Rajasthan">Rajasthan</option>
+						</select>
+					</div>
+				</div>
+				<div class="container-fluid m-2 p-0 row"> <!-- zip code -->
+					<div class="col-md-3 m-0 p-0">
+						<label>Zip Code</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<input type="number" name="zipcode">
+					</div>
+				</div>
+				<div class="container-fluid m-2 p-0 row"> <!-- phone number -->
+					<div class="col-md-3 m-0 p-0">
+						<label>Phone</label>
+					</div>
+					<div class="col-md-8 m-0 p-0">
+						<div class="row m-0 p-0">
+							<div class="col-8 m-0 p-0 pr-1">
+								<input type="number" name="contactnum" required="">
+							</div>
+							<div class="col-4 m-0 p-0">
+								<select name="contact_num_type" id='contact_num_type'>
+									<option value="" selected="" disabled="">Choose Contact Device Type</option>
+									<option value="Mobile">Mobile</option>
+									<option value="Telephone">Telephone</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- button -->
+			<div class="container-fluid m-0 p-0">
+				<center><button type="submit" class="btn btn-outline-success">Submit</button>
+				<button type="reset" class="btn btn-outline-danger">Reset</button></center>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
