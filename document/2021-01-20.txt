@@ -1,0 +1,10 @@
+2021-01-20
+
+Today i have done some of the given extra practice ..
+
+1) In this practice i have learn how to store data into localstorage by form submitting without loose previous record
+and how to show all available record from localstorage to html page.
+
+2)second thing i have been learn to make array of object dynamically.
+
+that's all i have learn today...
