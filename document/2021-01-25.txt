@@ -1,0 +1,26 @@
+2021-01-22
+
+Today , i have been see all the video from today list and do some practice on that..
+
+1) practice on  die and execute function in which i learn that die function kill script next to them up to end.
+
+2) In regular expression i have learn that preg_match function return 0 if pattern not found else return 1 if pattern is found. and in preg_replace function replace string when pattern match and generate new string with replace string.
+
+3) In function i have learn how to access global variable inside function and how to return value from function , how to declare function with argument.
+
+4) String practice 
+
+str_word_count() :
+- if second parameter is '0' then it only show count of word in string
+- if second parameter is '1' then it show word array with key 0,1,2...
+- if second parameter is '2' then in output array will show key of every word with their starting position and that value(word).
+
+str_shuffle() : generally this function is used to generate random file name from specific string.
+
+strrev() : reverse the string
+
+similar_text(string_1 , string_2 , result) : in this function third parameter store percentage of similarity between two string.
+
+trim() : remove whitespace from left and right side of string.
+
+addslashes() : add slashe before ' , " , \ where this symbol encounter in string.
