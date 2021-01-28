@@ -1,0 +1,11 @@
+watch video of today's task and practice on that in given topic...
+
+1) practice on get and post method in which i have learn that post method doesn't show data in url while get method show data in url when submit form.bascially post method is secure and used when we want to pass sensitive data through form.
+
+2) in word_sensoring i have practice that how can we mask the string with any symbol it's generally used when we want to hide indetity of user to the public so we add some symbol on their name or email address so no one can easily get who is it.
+
+3) make find and replace string application using some of string function.
+
+4) practice on header like how to redirect page using header and how to automatically redirect on another page after specific time.
+
+5) at the end practice on some of the attribute of global variable SERVER like get the name of host and get path to the current page.
