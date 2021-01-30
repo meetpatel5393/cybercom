@@ -1,0 +1,32 @@
+<students>
+	<student>
+		<name>Meet</name>
+		<branch>Computer</branch>
+		<sem>7</sem>
+		<subjects>
+			<subject>C++</subject>
+			<subject>C</subject>
+			<subject>PHP</subject>
+		</subjects>
+	</student>
+	<student>
+		<name>Krunal</name>
+		<branch>Electrical</branch>
+		<sem>8</sem>
+		<subjects>
+			<subject>JAVA</subject>
+			<subject>PYTHON</subject>
+		</subjects>
+	</student>
+	<student>
+		<name>Raj</name>
+		<branch>Civil</branch>
+		<sem>5</sem>
+		<subjects>
+			<subject>TOC</subject>
+			<subject>CS</subject>
+			<subject>WT</subject>
+			<subject>MPI</subject>
+		</subjects>
+	</student>
+</students>

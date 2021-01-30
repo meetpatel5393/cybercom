@@ -1,0 +1,46 @@
+#contactus_div{
+	background: url("https://thumbs.dreamstime.com/t/contact-us-background-businesses-email-call-message-landing-page-cover-icon-131608659.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 140%;
+}
+input{
+	width: 100%;
+	font-size: 20px;
+	outline: none;
+	border: none;
+}
+input:focus , input:active{
+	border: none;
+	outline: none;
+	color: rgba(0,0,0,0.5);
+}
+::placeholder{
+	color:rgba(0,0,0,0.4);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+.fa{
+	font-size: 25px;
+	color:rgba(0,0,0,0.4);
+}
+textarea{
+	font-size: 20px;
+	color: rgba(0,0,0,0.5);
+	width: 100%;
+	border: none;
+	height: 150px;
+	overflow-y: hidden;
+}
+textarea:focus{
+	outline: none;
+	border: none;
+}
+.btn{
+	border-radius: 20px;
+	box-shadow: 5px 0px 15px rgba(0,0,0,0.4);
+}
+#form_div{
+	background-color: rgba(0,0,0,0.03);
+}
