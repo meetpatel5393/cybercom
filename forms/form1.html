@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form 1</title>
+	<script type="text/javascript" src="form1.js"></script>
+</head>
+<style type="text/css">
+	.row {
+		justify-content: center;
+	}
+	h2,input{
+		margin: 0px;
+	}
+	table,tr,td {
+		border:1px solid black;
+		padding: 0px;
+	}
+	#header{
+		width: 500px;
+		background-color: yellow;
+		color:red;
+	}
+	input{
+		width: 90%;
+	}
+	td {
+		text-align: center;
+		padding:2px;
+		height: 30px;
+		background-color: #00FFFF;
+	}
+	textarea {
+		margin: 5px;
+		width: 90%;
+	}
+	span {
+		display: inline;
+	}
+	input[type=checkbox] {
+		width: 10%;
+		float: left;
+	}
+	label {
+		display: block;
+	}
+	span{
+		float: left;
+	}
+	input[type=radio] {
+		width: 10%;
+	}
+	input[type=file] {
+		width: 50%;
+	}
+	select{
+		width: 90%;
+	}
+	button {
+		width: 40%;
+		height: 100%;
+	}
+</style>
+<body>
+	<div class="container-fluid m-0 p-5 row">
+		<div class="container-fluid m-0 p-2 col-8 border">
+			<table>
+				<form method="post" id="form1" action="form1.php" onsubmit="return check_validation()">
+					<tr>
+						<td id="header" colspan="2"><h2>User Form</h2></td>
+					</tr>
+					<tr>
+						<td><p>Enter Name</p></td>
+						<td><input type="text" id="name" name="name"></td>
+					</tr>
+					<tr>
+						<td><p>Enter Password</p></td>
+						<td><input type="password" id="password" name="password"></td>
+					</tr>
+					<tr>
+						<td><p>Enter Address</p></td>
+						<td><textarea rows="4" id="address" name="address"></textarea></td>
+					</tr>
+					<tr>
+						<td><p>Select Game</p></td>
+						<td>
+							<label><input type="checkbox" name="game[]" value="Hockey"><span>Hockey</span></label><br>
+							<label><input type="checkbox" name="game[]" value="Football"><span>Football</span></label><br>
+							<label><input type="checkbox" name="game[]" value="Badminton"><span>Badminton</span></label><br>
+							<label><input type="checkbox" name="game[]" value="Cricket"><span>Cricket</span></label><br>
+							<label><input type="checkbox" name="game[]" value="vollyball"><span>vollyball</span></label>
+						</td>
+					</tr>
+					<tr>
+						<td><p>Gender</p></td>
+						<td>
+							<input type="radio" name="gender" value="male">Male
+							<input type="radio" name="gender" value="female">Female
+						</td>
+					</tr>
+					<tr>
+						<td>Select ur age</td>
+						<td>
+							<select id="age" name="age">
+								<option value="" disabled="" selected="">select</option>
+								<option>Kid</option>
+								<option>Teenage</option>
+								<option>Adult</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input type="file" id="file" name="file">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<button type="reset">Reset</button>
+							<button type="submit">Submit</button>
+						</td>
+					</tr>
+				</form>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

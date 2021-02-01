@@ -1,0 +1,49 @@
+#contactus_div{
+	background-color: orange;
+	background-repeat: no-repeat;
+	background-size: 100% 140%;
+}
+input{
+	width: 100%;
+	font-size: 20px;
+	outline: none;
+	border: none;
+}
+input:focus , input:active{
+	border: none;
+	outline: none;
+	color: rgba(0,0,0,0.5);
+}
+::placeholder{
+	color:rgba(0,0,0,0.4);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+.fa{
+	font-size: 25px;
+	color:rgba(0,0,0,0.4);
+}
+textarea{
+	font-size: 20px;
+	color: rgba(0,0,0,0.5);
+	width: 100%;
+	border: none;
+	height: 150px;
+	overflow-y: hidden;
+}
+textarea:focus{
+	outline: none;
+	border: none;
+}
+.btn {
+	width: 100%;
+	font-size: 30px;
+}
+#form_div{
+	background-color: rgba(0,0,0,0.03);
+}
+.row {
+	justify-content: center;
+}

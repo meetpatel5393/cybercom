@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form 2</title>
+	<script type="text/javascript" src="form2.js"></script>
+</head>
+<style type="text/css">
+	body {
+		padding: 50px;
+	}
+	table{
+		background-color: lightgreen;
+		padding: 20px;
+		border: 2px solid black;
+	}
+	td{
+		padding: 10px;
+	}
+	p{
+		margin: 0px;
+	}
+	h2{
+		margin: 0px;
+	}
+</style>
+<body onload="get_data()">
+	<form method="post" action="form2.php" onsubmit="return check_validation()">
+		<table>
+			<tr>
+				<td colspan="2">
+					<center><h2>USER FORM</h2></center>
+				</td>
+			</tr>
+			<tr>
+				<td>First Name</td>
+				<td>
+					<input type="text" name="name" id="name">
+				</td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td>
+					<input type="password" name="password" id="password">
+				</td>
+			</tr>
+			<tr>
+				<td><p>Gender</p></td>
+				<td>
+					<input type="radio" name="gender" value="male">Male
+					<input type="radio" name="gender" value="female">Female
+				</td>
+			</tr>
+			<tr>
+				<td><p>Address</p></td>
+				<td><textarea rows="4" id="address" name="address"></textarea></td>
+			</tr>
+			<tr>
+				<td><p>Date of Birth</p></td>
+				<td>
+					<select name="month" id="dob_month">
+						<option value="" selected="" disabled="">Month</option>
+					</select>
+					<select name="day" id="dob_day">
+						<option value="" selected="" disabled="">Day</option>
+					</select>
+					<select name="year" id="dob_year">
+						<option value="" selected="" disabled="">Year</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><p>Select Game</p></td>
+				<td>
+					<label><input type="checkbox" name="game[]" value="Hockey"><span>Hockey</span></label>
+					<label><input type="checkbox" name="game[]" value="Football"><span>Football</span></label>
+					<label><input type="checkbox" name="game[]" value="Cricket"><span>Cricket</span></label>
+					<label><input type="checkbox" name="game[]" value="vollyball"><span>vollyball</span></label>
+				</td>
+			</tr>
+			<tr>
+				<td><p>Marital status</p></td>
+				<td>
+					<input type="radio" name="marital_status" value="Married">Married
+					<input type="radio" name="marital_status" value="Unmarried">Unmarried
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button type="reset">Reset</button>
+					<button type="submit">Submit</button>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="checkbox" name="agree" id="agree" value="agree">I accept this agrement
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

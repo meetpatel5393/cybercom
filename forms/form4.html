@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form 2</title>
+	<script type="text/javascript" src="form4.js"></script>
+</head>
+<style type="text/css">
+	h5 {
+		background: orange;
+		padding:15px;
+		margin: 0px;
+		color:yellow;
+		font-size:20px;
+	}
+	table {
+		background: #181938;
+		color: white;
+		padding: 0px;
+		width: 400px;
+		border-collapse: collapse;
+	}
+	.heading {
+		text-align: right;
+		padding-right: 15px;
+		color:yellow;
+	}
+	p{
+		padding: 0px;
+		margin: 10px;
+	}
+	span {
+		color: yellow;
+	}
+	#btn{
+		background: orange;
+		padding: 15px;
+	}
+	button {
+		padding: 10px 15px 10px 15px;
+		color: white;
+		border: none;
+		float: right;
+	}
+	#submit{
+		background: #32CD32;
+	}
+	#cancle{
+		background: #CD5C5C;
+		margin-left: 5px;
+	}
+	.agree{
+		padding-top: 5px;
+		padding-bottom: 10px;
+	}
+</style>
+<body onload="get_data()">
+	<form method="post" action="form4.php" onsubmit="return check_validation()">
+		<table>
+			<tr>
+				<td colspan="2">
+					<h5>Sign Up</h5>
+				</td>
+			</tr>
+			<tr>
+				<td class="heading"><p>First Name</p></td>
+				<td>
+					<input type="text" name="fname" id="fname" placeholder="Enter First Name">
+				</td>
+			</tr>
+			<tr>
+				<td class="heading"><p>Last Name</p></td>
+				<td>
+					<input type="text" name="lname" id="lname" placeholder="Enter Last Name">
+				</td>
+			</tr>
+			<tr>
+				<td class="heading"><p>Date of Birth</p></td>
+				<td>
+					<select name="date" id="dob_day">
+						<option value="" selected="" disabled="">Date</option>
+					</select>
+					<select name="month" id="dob_month">
+						<option value="" selected="" disabled="">Month</option>
+					</select>
+					<select name="year" id="dob_year">
+						<option value="" selected="" disabled="">Year</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="heading"><p>Gender</p></td>
+				<td>
+					<label><input type="radio" name="gender" value="male"><span>Male</span></label>
+					<label><input type="radio" name="gender" value="female"><span>Female</span></label>
+				</td>
+			</tr>
+			<tr>
+				<td class="heading"><p>Country</p></td>
+				<td>
+					<select id="country" name="country">
+						<option value="" selected="" disabled="">Country</option>
+						<option>India</option>
+						<option>Aafrica</option>
+						<option>Dubai</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="heading"><p>E-mail</p></td>
+				<td><input type="email" name="email" id="email" placeholder="Enter Email"></td>
+			</tr>
+			<tr>
+				<td class="heading"><p>Phone</p></td>
+				<td><input type="number" name="number" id="number" placeholder="Enter Phone"></td>
+			</tr>
+			<tr>
+				<td class="heading"><p>Password</p></td>
+				<td><input type="password" name="password" id="password"></td>
+			</tr>
+			<tr>
+				<td class="heading"><p>Confrim Password</p></td>
+				<td><input type="password" name="confrim_password" id="confrim_password"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="agree">
+					<label><input type="checkbox" name="agree" id="agree" value="agree">
+					<span>I Agree to the Terms if use</span></label>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" id="btn">
+					<button type="reset" id="cancle">Cancle</button>
+					<button type="submit" id="submit">Submit</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
