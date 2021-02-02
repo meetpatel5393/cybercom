@@ -1,0 +1,79 @@
+<style type="text/css">
+	.row {
+		justify-content: center;
+	}
+	h2,input{
+		margin: 0px;
+	}
+	table,tr,td {
+		border:1px solid black;
+		padding: 0px;
+	}
+	#header{
+		width: 500px;
+		background-color: yellow;
+		color:red;
+	}
+	input{
+		width: 90%;
+	}
+	td {
+		text-align: center;
+		padding:5px;
+		height: 25px;
+		background-color: #00FFFF;
+		padding-bottom: 15px;
+	}
+	textarea {
+		margin: 0px;
+		width: 90%;
+	}
+	span {
+		display: inline;
+	}
+	input[type=checkbox] {
+		width: 10%;
+		float: left;
+	}
+	label {
+		display: block;
+	}
+	span{
+		float: left;
+	}
+	input[type=radio] {
+		width: 10%;
+	}
+	input[type=file] {
+		width: 50%;
+	}
+	select{
+		width: 90%;
+	}
+	button {
+		width: 40%;
+		height: 100%;
+	}
+	.err_msg {
+		color: red;
+		padding-left: 13px;
+		margin: 0px;
+		position: absolute;
+		font-size: 13px;
+	}
+	.err_msg p {
+		margin: 0px;
+	}
+	#game_error{
+		margin: 0px;
+		padding: 0px;
+		color: red;
+		font-size: 15px;
+	}
+	#form1_data {
+		position: absolute;
+		top: 10%;
+		left: 40%;
+		font-size: 20px;
+	}
+</style>
