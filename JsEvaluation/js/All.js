@@ -75,7 +75,6 @@ function login_user(){
 						//set admin login session log
 						userLoginSession.push(adminLoginSessionLog);
 						setDataIntoLocalStorage('AdminLoginSessionLog',userLoginSession);
-						
 						window.location.replace("dashboard.html");
 					} else {
 						alert('Wrong Password');
@@ -123,8 +122,17 @@ function login_user(){
 								};
 
 								//set login session log
-								userLoginSession.push(MyLoginSessionLogDetail);
-								setDataIntoLocalStorage('MyLoginSessionLog',userLoginSession);
+								if(localStorage.getItem("MyLoginSessionLog") != null) {
+									userLoginSession = getDataFromLocalStorage("MyLoginSessionLog");
+									userLoginSession[0]['logInTime'] = date+' '+time;
+									userLoginSession[0]['status'] = 'LogIn';
+									userLoginSession[0]['name'] = Uname;
+									setDataIntoLocalStorage('MyLoginSessionLog',userLoginSession);
+								} else {
+									userLoginSession.push(MyLoginSessionLogDetail);
+									setDataIntoLocalStorage('MyLoginSessionLog',userLoginSession);
+								}
+
 
 								//store data into all user session log
 								if(localStorage.getItem("userSessionLog") != null){ //if record is availbale in localstorage
@@ -331,6 +339,8 @@ function getUserSessionsLog() {
 }
 
 function getUserCount() {
+	var res = '';
+	var today = new Date();
 	if(localStorage.getItem("subUserData") != null){
 		arrayOfObject = getDataFromLocalStorage("subUserData");
 		var sub_user_dataDom = document.getElementById('subUser_data');
@@ -347,10 +357,15 @@ function getUserCount() {
 			} else if(age>50) {
 				count2++;
 			}
+
+			if(today.getDate() === dob.getDate() && today.getDate() === dob.getDate()){
+				res += 'Today is '+arrayOfObject[i]['name']+' Birthday <br>';
+			}
 		}
 		document.getElementById('uc1').innerHTML = count+' Users';
 		document.getElementById('uc2').innerHTML = count1+' Users';
 		document.getElementById('uc3').innerHTML = count2+' Users';
+		document.getElementById('bdayList').innerHTML = res;
 	}
 }
 function loadUserName() {
@@ -362,7 +377,7 @@ function loadUserName() {
 
 function showBdayWish() {
 	var name = '';
-	var d = new Date().getTime();
+	var today = new Date();
 	if(localStorage.getItem("MyLoginSessionLog") != null){ //if record is availbale in localstorage
 		arrayOfObject = getDataFromLocalStorage("MyLoginSessionLog");
 		name = arrayOfObject[0]['name'];
@@ -372,13 +387,60 @@ function showBdayWish() {
 		arrayOfObject = getDataFromLocalStorage("subUserData");
 		for (var i = 0; i < arrayOfObject.length; i++) {
 			if(arrayOfObject[i]['name'] === name) {
-				var d1 = arrayOfObject[i]['dob'];
-				var dob = new Date(d1).getTime();
+				var birthDate = new Date(arrayOfObject[i]['dob']);
+				if(today.getDate() === birthDate.getDate() && today.getDate() === birthDate.getDate()){
+					document.getElementById("subUserBdayWish").innerHTML = "Happy BirthDay "+name;
+				}
 				break;
 			}
 		}
-		if(dob==d){
-			alert('same');
+	}
+}
+
+function logOutSubUser() {
+	var today = new Date();
+	var time = today.getHours() + ":" + today.getMinutes() ;
+	var date = today.getDate()+'-'+months[(today.getMonth()+1)]+'-'+today.getFullYear();
+	var email = ''; 
+	var name='';
+	//update data in personal log
+	if(localStorage.getItem("MyLoginSessionLog") != null){
+		arrayOfObject = getDataFromLocalStorage("MyLoginSessionLog");
+		arrayOfObject[0]['logOutTime'] = date+' '+time;
+		arrayOfObject[0]['status'] = 'logout';
+		email = arrayOfObject[0]['email'];
+		name =  arrayOfObject[0]['name'];
+	}
+	setDataIntoLocalStorage('MyLoginSessionLog',arrayOfObject);
+
+
+	if(localStorage.getItem("userSessionLog") != null){
+		arrayOfObject = getDataFromLocalStorage("userSessionLog");
+		for (var i = 0; i < arrayOfObject.length; i++) {
+			if(arrayOfObject[i]['name'] === name) {
+				arrayOfObject[i]['logOutTime'] = date+' '+time;
+				break;
+			}
 		}
+	}
+	setDataIntoLocalStorage('userSessionLog',arrayOfObject);
+	window.location.replace('login.html');
+}
+
+function logOutAdmin(){
+	if(localStorage.getItem("AdminLoginSessionLog") != null){
+		arrayOfObject = getDataFromLocalStorage("AdminLoginSessionLog");
+		arrayOfObject[0]['status'] = 'logout';
+	}
+	setDataIntoLocalStorage('AdminLoginSessionLog',arrayOfObject);
+	window.location.replace('login.html');
+}
+
+function checkStatus(val){
+	if(localStorage.getItem(val) != null){
+		arrayOfObject = getDataFromLocalStorage(val);
+		 if(arrayOfObject[0]['status'] === 'logout') {
+		 	window.location.replace('login.html');
+		 }
 	}
 }

@@ -5,6 +5,9 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="js/All.js"></script>
 </head>
+<script type="text/javascript">
+	checkStatus("AdminLoginSessionLog");
+</script>
 <body onload="loadAdminName()">
 	<table id="Admindashboard_div" class="dashboard">
 		<tr>
@@ -15,7 +18,7 @@
 						<li><a href="dashboard1.html" target="dest">DashBoard</a></li>
 						<li><a href="user.html" target="dest">Users</a></li>
 						<li><a href="userSessionLog.html" target="dest">Login Session</a></li>
-						<li><a href="#" target="dest">Logout</a></li>
+						<li><a onclick="logOutAdmin()">Logout</a></li>
 					</ul>
 				</div>
 			</td>
