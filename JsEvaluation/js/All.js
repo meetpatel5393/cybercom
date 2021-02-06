@@ -112,6 +112,7 @@ function login_user(){
 								var LoginSessionLog = {
 									name : arrayOfObject[i]['name'],
 									logInTime : date+' '+time,
+									email: arrayOfObject[i]['email'],
 									logOutTime : ''
 								};
 								//set login session log
@@ -391,7 +392,7 @@ function logOutSubUser() {
 	if(localStorage.getItem("userSessionLog") != null){
 		arrayOfObject = getDataFromLocalStorage("userSessionLog");
 		for (var i = 0; i < arrayOfObject.length; i++) {
-			if(arrayOfObject[i]['name'] === name) {
+			if(arrayOfObject[i]['email'] === email) {
 				arrayOfObject[i]['logOutTime'] = date+' '+time;
 				break;
 			}
