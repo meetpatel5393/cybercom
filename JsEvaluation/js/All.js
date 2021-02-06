@@ -54,14 +54,15 @@ function register_admin() {
 	}
 }
 function login_user(){
-	var username = document.getElementById('username').value.trim().toLowerCase();
+	var useremail= document.getElementById('email').value.trim().toLowerCase();
 	var user_password = document.getElementById('password').value.trim().toLowerCase();
 
-	if(username.length != 0 && user_password.length != 0) {
+	if(useremail.length != 0 && user_password.length != 0) {
 		if(localStorage.getItem("adminData") != null){ //if record is availbale in localstorage
 			arrayOfObject = getDataFromLocalStorage("adminData");
 			for (var i = 0; i < arrayOfObject.length; i++) {
-				if(arrayOfObject[i]['name'] === username) {
+				if(arrayOfObject[i]['email'] === useremail) {
+					//check in admin data.
 					if(arrayOfObject[i]['password'] === user_password) {
 						alert('Successfully Log-In');
 						window.location.replace("dashboard.html");
@@ -74,17 +75,39 @@ function login_user(){
 					//check subuser database
 					if(localStorage.getItem("subUserData") != null){ //if record is availbale in localstorage
 						arrayOfObject = getDataFromLocalStorage("subUserData");
+						var userExits = '';
 						for (var i = 0; i < arrayOfObject.length; i++) {
-							if(arrayOfObject[i]['name'] === username) {
-								if(arrayOfObject[i]['password'] === user_password) {
-									alert('Successfully Log-In');
-									//window.location.replace("dashboard.html");
-								} else {
-									alert('Wrong Password');
-									window.location.replace("login.html");
-								}
+							if(arrayOfObject[i]['email'] === useremail) {
+								userExits = true ;
 								break;
+							} else {
+								userExits = false ;
 							}
+						}
+						if(userExits == true) {
+							if(arrayOfObject[i]['password'] === user_password) {
+								alert('Successfully Log-In');
+								var MyLoginSessionLogDetail = {
+									name : arrayOfObject[i]['name'],
+									logInTime : ,
+									logOutTime : ''
+								};
+								//set login session log
+								if(localStorage.getItem('MyLoginSessionLog')!= null) {
+									arrayOfObject = getDataFromLocalStorage("MyLoginSessionLog");
+
+								} else {
+
+								}
+
+								//window.location.replace("dashboard.html");
+							} else {
+								alert('Wrong Password');
+								window.location.replace("login.html");
+							}
+						} else {
+							alert('Please Ask Admin to give you access of this site');
+							window.location.replace("login.html");
 						}
 					}
 					break;
@@ -145,12 +168,13 @@ function addSubUser(){
 		alert('Please enter all value');
 	}
 }
+
 function getSubUser_data(){
 	if(localStorage.getItem("subUserData") != null){
 		arrayOfObject = getDataFromLocalStorage("subUserData");
 		var sub_user_dataDom = document.getElementById('subUser_data');
 		for (var i = 0; i < arrayOfObject.length; i++) {
-		
+
 			var dob = new Date(arrayOfObject[i]['dob']);
 		    var d = new Date();
 		    var age = d.getFullYear() - dob.getFullYear();
@@ -168,11 +192,67 @@ function getSubUser_data(){
 			cell4.innerHTML = arrayOfObject[i]['dob'];
 			cell5.innerHTML = age;
 			cell6.innerHTML = 
-			'<a href="#" id="'+arrayOfObject[i]['name']+'"onclick="edit_subuser_data(this.id);">'+'Edit'+'</a>' +
-			' <a href="#" id="'+arrayOfObject[i]['name']+'"onclick="deleteSubUser_data(this.id);">'+'Delete'+'</a>';
+			'<a href="#" id="'+arrayOfObject[i]['email']+'"onclick="editSubUser_data(this.id);">'+'Edit'+'</a>' +
+			' <a href="#" id="'+arrayOfObject[i]['email']+'"onclick="deleteSubUser_data(this.id);">'+'Delete'+'</a>';
 		}
 	}
 }
-// function deleteSubUser_data(val) {
-	
+
+function deleteSubUser_data(val) {
+	var subUserEmail = val;
+	if(localStorage.getItem("subUserData") != null){ //if record is availbale in localstorage
+		arrayOfObject = getDataFromLocalStorage("subUserData");
+		for (var i = 0; i < arrayOfObject.length; i++) {
+			if(arrayOfObject[i]['email'] === subUserEmail) {
+				arrayOfObject.splice(i,1);
+				break;
+			}
+		}
+		setDataIntoLocalStorage('subUserData',arrayOfObject);
+		window.location.replace("user.html");
+	}
+}
+
+function editSubUser_data(val) {
+	var subUserEmail = val;
+	if(localStorage.getItem("subUserData") != null){ //if record is availbale in localstorage
+		arrayOfObject = getDataFromLocalStorage("subUserData");
+		for (var i = 0; i < arrayOfObject.length; i++) {
+			if(arrayOfObject[i]['email'] === subUserEmail) {
+				document.getElementById('name').value = arrayOfObject[i]['name'];
+				document.getElementById('email').value = arrayOfObject[i]['email'];
+				document.getElementById('password').value = arrayOfObject[i]['password'];
+				document.getElementById('dob').value = arrayOfObject[i]['dob'];
+				break;
+			}
+		}
+		document.getElementById('add_user_btn').innerHTML = 'Update User';
+		document.getElementById('add_user_btn').setAttribute("onclick", "updateSubUser_data(this.id)");
+		document.getElementById('add_user_btn').setAttribute("id",val);
+		document.getElementById('email').setAttribute("readonly","true");
+	}
+}
+
+function updateSubUser_data(val) {
+	var subUserEmail = val;
+	var username = document.getElementById('name').value.trim().toLowerCase();
+	var password = document.getElementById('password').value.trim().toLowerCase();
+	var dob = document.getElementById('dob').value.trim().toLowerCase();
+	if(localStorage.getItem("subUserData") != null){ //if record is availbale in localstorage
+		arrayOfObject = getDataFromLocalStorage("subUserData");
+		for (var i = 0; i < arrayOfObject.length; i++) {
+			if(arrayOfObject[i]['email'] === subUserEmail) {
+				arrayOfObject[i]['name'] = username;
+				arrayOfObject[i]['password'] = password;
+				arrayOfObject[i]['dob'] = dob;
+				break;
+			}
+		}
+		setDataIntoLocalStorage('subUserData',arrayOfObject);
+		window.location.replace("user.html");
+	}
+}
+
+// function showBdayWish(){
+
 // }

@@ -57,28 +57,33 @@
 
 
 
-#Admindashboard_div ul {
+
+.dashboard ul {
 	padding: 0px;
 	background-color: orange;
 	height: 650px;
 	margin:0px;
 }
-
-#Admindashboard_div li {
+.dashboard li {
 	list-style-type: none;
 	padding:10px;
 	margin: 2px;
 	display: block;
 	width: 200px;
 }
-#Admindashboard_div iframe {
+.dashboard iframe {
 	width: 375%;
 	height:650px;
 }
-#Admindashboard_div a{
+.dashboard a{
 	text-decoration: none;
 	color: white;
 }
+.dashboard h2 {
+	padding: 0px;
+	margin: 0px;
+}
+
 
 
 
