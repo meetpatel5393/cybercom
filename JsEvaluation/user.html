@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/All.js"></script>
+</head>
+<body onload="getSubUser_data()">
+	<div id="userPage_div">
+		<h3>Add User</h3>
+		<form>
+			<input type="tetx" id="name" placeholder="Name">
+			<input type="email" id="email" placeholder="Email">
+			<input type="password" id="password" placeholder="Password">
+			<input type="date" id="dob" placeholder="Birthdate"><br>
+			<button type="button" id="add_user_btn" onclick="addSubUser()">Add User</button>
+		</form>
+		<br>
+		<h3>User List</h3>
+		<table id="subUser_data">
+			<tr id="heading">
+				<td>Name</td>
+				<td>Email</td>
+				<td>Password</td>
+				<td>Birthdate</td>
+				<td>Age</td>
+				<td>Actions</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
