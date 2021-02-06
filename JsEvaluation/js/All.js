@@ -1,5 +1,7 @@
 var arrayOfObject = [];
-
+var userLoginSession = [];
+var allUserLoginSession = [];
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 function getDataFromLocalStorage(keyName) {
 	return JSON.parse(localStorage.getItem(keyName));
 }
@@ -87,17 +89,59 @@ function login_user(){
 						if(userExits == true) {
 							if(arrayOfObject[i]['password'] === user_password) {
 								alert('Successfully Log-In');
+
+								var today = new Date();
+								var time = today.getHours() + ":" + today.getMinutes() ;
+								var date = today.getDate()+'-'+months[(today.getMonth()+1)]+'-'+today.getFullYear();
+								
 								var MyLoginSessionLogDetail = {
 									name : arrayOfObject[i]['name'],
-									logInTime : ,
+									logInTime : date+' '+time,
+									logOutTime : '',
+									status : 'LogIn'
+								};
+								var LoginSessionLog = {
+									name : arrayOfObject[i]['name'],
+									logInTime : date+' '+time,
 									logOutTime : ''
 								};
+
 								//set login session log
-								if(localStorage.getItem('MyLoginSessionLog')!= null) {
-									arrayOfObject = getDataFromLocalStorage("MyLoginSessionLog");
+								userLoginSession.push(MyLoginSessionLogDetail);
+								setDataIntoLocalStorage('MyLoginSessionLog',userLoginSession);
 
-								} else {
+								//store data into all user session log
+								if(localStorage.getItem("userSessionLog") != null){ //if record is availbale in localstorage
+									allUserLoginSession = getDataFromLocalStorage("userSessionLog");
+									var logExits = '';
+									for (var i = 0; i < allUserLoginSession.length; i++) {
+										if(allUserLoginSession[i]['name'] === arrayOfObject[i]['name']) {
+											logExits = true ;
+											break;
+										} else {
+											logExits = false ;
+										}
+									}
+									if(logExits == false) {
+										array_of_obj.push(userData);
+										localStorage.setItem('register_user_data',JSON.stringify(array_of_obj));
+										alert('Registered Successfully');
+										window.location.replace("login.html");
+									} else {
+										alert('You Already Registered');
+									}
 
+									/*for (var i = 0; i < allUserLoginSession.length; i++) {
+										if(allUserLoginSession[i]['name'] === arrayOfObject[i]['name']) {
+											allUserLoginSession[i]['logInTime'] = date+' '+time;
+											break;
+										}
+									}*/
+									//setDataIntoLocalStorage('userSessionLog',allUserLoginSession);
+								}
+								else {
+									allUserLoginSession.push(LoginSessionLog);
+									setDataIntoLocalStorage('userSessionLog',allUserLoginSession);
 								}
 
 								//window.location.replace("dashboard.html");
