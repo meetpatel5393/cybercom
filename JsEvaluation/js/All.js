@@ -67,27 +67,42 @@ function login_user(){
 					//check in admin data.
 					if(arrayOfObject[i]['password'] === user_password) {
 						alert('Successfully Log-In');
+						var adminLoginSessionLog = {
+							name : arrayOfObject[i]['name'],
+							status : 'LogIn'
+						};
+						//set admin login session log
+						userLoginSession.push(adminLoginSessionLog);
+						setDataIntoLocalStorage('AdminLoginSessionLog',userLoginSession);
+						
 						window.location.replace("dashboard.html");
 					} else {
 						alert('Wrong Password');
 						window.location.replace("login.html");
 					}
 					break;
-				} else {
-					//check subuser database
+				} 
+				//check subuser database
+				else {
 					if(localStorage.getItem("subUserData") != null){ //if record is availbale in localstorage
 						arrayOfObject = getDataFromLocalStorage("subUserData");
 						var userExits = '';
+						var Uname = '';
+						var Upassword = '';
 						for (var i = 0; i < arrayOfObject.length; i++) {
 							if(arrayOfObject[i]['email'] === useremail) {
 								userExits = true ;
+								Uname = arrayOfObject[i]['name'];
+								Upassword = arrayOfObject[i]['password'];
 								break;
 							} else {
 								userExits = false ;
 							}
 						}
 						if(userExits == true) {
-							if(arrayOfObject[i]['password'] === user_password) {
+							if(Upassword === user_password) {
+
+
 								alert('Successfully Log-In');
 
 								var today = new Date();
@@ -95,7 +110,7 @@ function login_user(){
 								var date = today.getDate()+'-'+months[(today.getMonth()+1)]+'-'+today.getFullYear();
 								
 								var MyLoginSessionLogDetail = {
-									name : arrayOfObject[i]['name'],
+									name : Uname,
 									logInTime : date+' '+time,
 									logOutTime : '',
 									status : 'LogIn'
@@ -115,36 +130,25 @@ function login_user(){
 									allUserLoginSession = getDataFromLocalStorage("userSessionLog");
 									var logExits = '';
 									for (var i = 0; i < allUserLoginSession.length; i++) {
-										if(allUserLoginSession[i]['name'] === arrayOfObject[i]['name']) {
-											logExits = true ;
+										if(allUserLoginSession[i]['name'] === Uname) {
+											allUserLoginSession[i]['logInTime'] = date+' '+time;
+											setDataIntoLocalStorage('userSessionLog',allUserLoginSession);
+											logExits = true;
 											break;
 										} else {
-											logExits = false ;
+											logExits = false;
 										}
 									}
 									if(logExits == false) {
-										array_of_obj.push(userData);
-										localStorage.setItem('register_user_data',JSON.stringify(array_of_obj));
-										alert('Registered Successfully');
-										window.location.replace("login.html");
-									} else {
-										alert('You Already Registered');
+										allUserLoginSession.push(LoginSessionLog);
+										setDataIntoLocalStorage('userSessionLog',allUserLoginSession);
 									}
-
-									/*for (var i = 0; i < allUserLoginSession.length; i++) {
-										if(allUserLoginSession[i]['name'] === arrayOfObject[i]['name']) {
-											allUserLoginSession[i]['logInTime'] = date+' '+time;
-											break;
-										}
-									}*/
-									//setDataIntoLocalStorage('userSessionLog',allUserLoginSession);
 								}
 								else {
 									allUserLoginSession.push(LoginSessionLog);
 									setDataIntoLocalStorage('userSessionLog',allUserLoginSession);
 								}
-
-								//window.location.replace("dashboard.html");
+								window.location.replace("subUser.html");
 							} else {
 								alert('Wrong Password');
 								window.location.replace("login.html");
@@ -297,6 +301,13 @@ function updateSubUser_data(val) {
 	}
 }
 
+function loadAdminName(){
+	if(localStorage.getItem("adminData") != null){ //if record is availbale in localstorage
+		arrayOfObject = getDataFromLocalStorage("adminData");
+		document.getElementById('') adminName = arrayOfObject[0]['name'];
+
+	}
+}
 // function showBdayWish(){
 
 // }
