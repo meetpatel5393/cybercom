@@ -1,7 +1,7 @@
 var arrayOfObject = [];
 var userLoginSession = [];
 var allUserLoginSession = [];
-var count = 0,count1=0,count2=0;
+var count = 0, count1=0, count2=0;
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 function getDataFromLocalStorage(keyName) {
 	return JSON.parse(localStorage.getItem(keyName));
@@ -18,16 +18,14 @@ function register_admin() {
 	var city = document.getElementById('city').value.trim().toLowerCase();
 	var state = document.getElementById('state').value.trim().toLowerCase();
 	var termsDom = document.getElementById('terms');
-	if(
-		username.length != 0 
+	if( username.length != 0 
 		&& email.length != 0 
 		&& password.length != 0 
 		&& confirm_password.length != 0
 		&& city.length != 0 
 		&& state.length != 0
 		) {
-		if(password === confirm_password)
-		{
+		if(password === confirm_password) {
 			if(termsDom.checked) {
 				var AdminData = {
 					name : username,
@@ -101,14 +99,10 @@ function login_user(){
 						}
 						if(userExits == true) {
 							if(Upassword === user_password) {
-
-
 								alert('Successfully Log-In');
-
 								var today = new Date();
 								var time = today.getHours() + ":" + today.getMinutes() ;
 								var date = today.getDate()+'-'+months[(today.getMonth()+1)]+'-'+today.getFullYear();
-								
 								var MyLoginSessionLogDetail = {
 									name : Uname,
 									logInTime : date+' '+time,
@@ -120,7 +114,6 @@ function login_user(){
 									logInTime : date+' '+time,
 									logOutTime : ''
 								};
-
 								//set login session log
 								if(localStorage.getItem("MyLoginSessionLog") != null) {
 									userLoginSession = getDataFromLocalStorage("MyLoginSessionLog");
@@ -132,8 +125,6 @@ function login_user(){
 									userLoginSession.push(MyLoginSessionLogDetail);
 									setDataIntoLocalStorage('MyLoginSessionLog',userLoginSession);
 								}
-
-
 								//store data into all user session log
 								if(localStorage.getItem("userSessionLog") != null){ //if record is availbale in localstorage
 									allUserLoginSession = getDataFromLocalStorage("userSessionLog");
@@ -175,7 +166,6 @@ function login_user(){
 		alert('Please enter all value');
 	}	
 }
-
 function addSubUser(){
 	var username = document.getElementById('name').value.trim().toLowerCase();
 	var email = document.getElementById('email').value.trim().toLowerCase();
@@ -225,7 +215,6 @@ function addSubUser(){
 		alert('Please enter all value');
 	}
 }
-
 function getSubUser_data(){
 	if(localStorage.getItem("subUserData") != null){
 		arrayOfObject = getDataFromLocalStorage("subUserData");
@@ -254,7 +243,6 @@ function getSubUser_data(){
 		}
 	}
 }
-
 function deleteSubUser_data(val) {
 	var subUserEmail = val;
 	if(localStorage.getItem("subUserData") != null){ //if record is availbale in localstorage
@@ -269,7 +257,6 @@ function deleteSubUser_data(val) {
 		window.location.replace("user.html");
 	}
 }
-
 function editSubUser_data(val) {
 	var subUserEmail = val;
 	if(localStorage.getItem("subUserData") != null){ //if record is availbale in localstorage
@@ -289,7 +276,6 @@ function editSubUser_data(val) {
 		document.getElementById('email').setAttribute("readonly","true");
 	}
 }
-
 function updateSubUser_data(val) {
 	var subUserEmail = val;
 	var username = document.getElementById('name').value.trim().toLowerCase();
@@ -309,24 +295,21 @@ function updateSubUser_data(val) {
 		window.location.replace("user.html");
 	}
 }
-
 function loadAdminName(){
 	if(localStorage.getItem("adminData") != null){ //if record is availbale in localstorage
 		arrayOfObject = getDataFromLocalStorage("adminData");
 		document.getElementById('adminName').innerHTML= 'Hello '+arrayOfObject[0]['name'];
 	}
 }
-
 function getUserSessionsLog() {
 	if(localStorage.getItem("userSessionLog") != null){
 		arrayOfObject = getDataFromLocalStorage("userSessionLog");
 		var userSessionLog_data = document.getElementById('userSessionLog_data');
 		for (var i = 0; i < arrayOfObject.length; i++) {
-
 			var dob = new Date(arrayOfObject[i]['dob']);
 		    var d = new Date();
 		    var age = d.getFullYear() - dob.getFullYear();
-		     
+
 			var row = userSessionLog_data.insertRow(i+1);
 			var cell1 = row.insertCell(0);
 			var cell2 = row.insertCell(1);
@@ -337,7 +320,6 @@ function getUserSessionsLog() {
 		}
 	}
 }
-
 function getUserCount() {
 	var res = '';
 	var today = new Date();
@@ -345,11 +327,9 @@ function getUserCount() {
 		arrayOfObject = getDataFromLocalStorage("subUserData");
 		var sub_user_dataDom = document.getElementById('subUser_data');
 		for (var i = 0; i < arrayOfObject.length; i++) {
-
 			var dob = new Date(arrayOfObject[i]['dob']);
 		    var d = new Date();
 		    var age = d.getFullYear() - dob.getFullYear();
-		     
 			if(age<18) {
 				count++;
 			} else if(18<age<50) {
@@ -357,7 +337,6 @@ function getUserCount() {
 			} else if(age>50) {
 				count2++;
 			}
-
 			if(today.getDate() === dob.getDate() && today.getDate() === dob.getDate()){
 				res += 'Today is '+arrayOfObject[i]['name']+' Birthday <br>';
 			}
@@ -374,7 +353,6 @@ function loadUserName() {
 		document.getElementById('subUserName').innerHTML= 'Hello '+arrayOfObject[0]['name'];
 	}
 }
-
 function showBdayWish() {
 	var name = '';
 	var today = new Date();
@@ -382,7 +360,6 @@ function showBdayWish() {
 		arrayOfObject = getDataFromLocalStorage("MyLoginSessionLog");
 		name = arrayOfObject[0]['name'];
 	}
-
 	if(localStorage.getItem("subUserData") != null){
 		arrayOfObject = getDataFromLocalStorage("subUserData");
 		for (var i = 0; i < arrayOfObject.length; i++) {
@@ -396,7 +373,6 @@ function showBdayWish() {
 		}
 	}
 }
-
 function logOutSubUser() {
 	var today = new Date();
 	var time = today.getHours() + ":" + today.getMinutes() ;
@@ -412,8 +388,6 @@ function logOutSubUser() {
 		name =  arrayOfObject[0]['name'];
 	}
 	setDataIntoLocalStorage('MyLoginSessionLog',arrayOfObject);
-
-
 	if(localStorage.getItem("userSessionLog") != null){
 		arrayOfObject = getDataFromLocalStorage("userSessionLog");
 		for (var i = 0; i < arrayOfObject.length; i++) {
@@ -426,7 +400,6 @@ function logOutSubUser() {
 	setDataIntoLocalStorage('userSessionLog',arrayOfObject);
 	window.location.replace('login.html');
 }
-
 function logOutAdmin(){
 	if(localStorage.getItem("AdminLoginSessionLog") != null){
 		arrayOfObject = getDataFromLocalStorage("AdminLoginSessionLog");
@@ -435,7 +408,6 @@ function logOutAdmin(){
 	setDataIntoLocalStorage('AdminLoginSessionLog',arrayOfObject);
 	window.location.replace('login.html');
 }
-
 function checkStatus(val){
 	if(localStorage.getItem(val) != null){
 		arrayOfObject = getDataFromLocalStorage(val);
