@@ -1,6 +1,7 @@
 var arrayOfObject = [];
 var userLoginSession = [];
 var allUserLoginSession = [];
+var count = 0,count1=0,count2=0;
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 function getDataFromLocalStorage(keyName) {
 	return JSON.parse(localStorage.getItem(keyName));
@@ -304,10 +305,80 @@ function updateSubUser_data(val) {
 function loadAdminName(){
 	if(localStorage.getItem("adminData") != null){ //if record is availbale in localstorage
 		arrayOfObject = getDataFromLocalStorage("adminData");
-		document.getElementById('') adminName = arrayOfObject[0]['name'];
-
+		document.getElementById('adminName').innerHTML= 'Hello '+arrayOfObject[0]['name'];
 	}
 }
-// function showBdayWish(){
 
-// }
+function getUserSessionsLog() {
+	if(localStorage.getItem("userSessionLog") != null){
+		arrayOfObject = getDataFromLocalStorage("userSessionLog");
+		var userSessionLog_data = document.getElementById('userSessionLog_data');
+		for (var i = 0; i < arrayOfObject.length; i++) {
+
+			var dob = new Date(arrayOfObject[i]['dob']);
+		    var d = new Date();
+		    var age = d.getFullYear() - dob.getFullYear();
+		     
+			var row = userSessionLog_data.insertRow(i+1);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			cell1.innerHTML = arrayOfObject[i]['name'];
+			cell2.innerHTML = arrayOfObject[i]['logInTime'];
+			cell3.innerHTML = arrayOfObject[i]['logOutTime'];
+		}
+	}
+}
+
+function getUserCount() {
+	if(localStorage.getItem("subUserData") != null){
+		arrayOfObject = getDataFromLocalStorage("subUserData");
+		var sub_user_dataDom = document.getElementById('subUser_data');
+		for (var i = 0; i < arrayOfObject.length; i++) {
+
+			var dob = new Date(arrayOfObject[i]['dob']);
+		    var d = new Date();
+		    var age = d.getFullYear() - dob.getFullYear();
+		     
+			if(age<18) {
+				count++;
+			} else if(18<age<50) {
+				count1++;
+			} else if(age>50) {
+				count2++;
+			}
+		}
+		document.getElementById('uc1').innerHTML = count+' Users';
+		document.getElementById('uc2').innerHTML = count1+' Users';
+		document.getElementById('uc3').innerHTML = count2+' Users';
+	}
+}
+function loadUserName() {
+	if(localStorage.getItem("MyLoginSessionLog") != null){ //if record is availbale in localstorage
+		arrayOfObject = getDataFromLocalStorage("MyLoginSessionLog");
+		document.getElementById('subUserName').innerHTML= 'Hello '+arrayOfObject[0]['name'];
+	}
+}
+
+function showBdayWish() {
+	var name = '';
+	var d = new Date().getTime();
+	if(localStorage.getItem("MyLoginSessionLog") != null){ //if record is availbale in localstorage
+		arrayOfObject = getDataFromLocalStorage("MyLoginSessionLog");
+		name = arrayOfObject[0]['name'];
+	}
+
+	if(localStorage.getItem("subUserData") != null){
+		arrayOfObject = getDataFromLocalStorage("subUserData");
+		for (var i = 0; i < arrayOfObject.length; i++) {
+			if(arrayOfObject[i]['name'] === name) {
+				var d1 = arrayOfObject[i]['dob'];
+				var dob = new Date(d1).getTime();
+				break;
+			}
+		}
+		if(dob==d){
+			alert('same');
+		}
+	}
+}

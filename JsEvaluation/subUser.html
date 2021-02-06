@@ -5,20 +5,20 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="js/All.js"></script>
 </head>
-<body>
+<body onclick="loadUserName()">
 	<table id="subUserDashBoard_div" class="dashboard">
 		<tr>
 			<td>
 				<div>
 					<ul>
-						<h2>name</h2>
-						<li><a href="subUserDashBoard_.html" target="dest">DashBoard</a></li>
+						<p id="subUserName"></p>
+						<li><a href="subUserDashBoard.html" target="dest">DashBoard</a></li>
 						<li><a href="#" target="dest">Logout</a></li>
 					</ul>
 				</div>
 			</td>
 			<td>
-				<iframe src="subUserDashBoard_.html" name="dest"></iframe>
+				<iframe src="subUserDashBoard.html" name="dest"></iframe>
 			</td>
 		</tr>
 	</table>
