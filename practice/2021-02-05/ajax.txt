@@ -1,0 +1,81 @@
+AJAX = Asynchronous JavaScript And XML.
+---------------------------------------------------------------------------------------------
+XMLHttpRequest Object :
+
+-> XMLHttpRequest (XHR) objects are used to interact with servers.
+-> You can retrieve data from a URL without having to do a full page refresh
+-> XMLHttpRequest can be used to retrieve any type of data, not just XML.
+---------------------------------------------------------------------------------------------
+Constructor :
+
+XMLHttpRequest() : The constructor initializes an XMLHttpRequest. It must be called before any other method calls.
+---------------------------------------------------------------------------------------------
+XMLHttpRequest Object Properties :
+
+-> onreadystatechange : Defines a function to be called when the readyState property changes
+-> readyState : 	Holds the status of the XMLHttpRequest.
+					0: request not initialized
+					1: server connection established
+					2: request received
+					3: processing request
+					4: request finished and response is ready.
+-> responseText : Returns the response data as a string
+-> responseXML : Returns the response data as XML data
+-> status : 	Returns the status-number of a request
+				200: "OK"
+				403: "Forbidden"
+				404: "Not Found"
+-> statusText : Returns the status-text (e.g. "OK" or "Not Found")
+
+:: HTTP status messages ::
+1xx: Information
+2xx: Successful
+3xx: Redirection
+4xx: Client Error
+5xx: Server Error
+---------------------------------------------------------------------------------------------
+XMLHttpRequest Object Methods :
+
+-> new XMLHttpRequest() : Creates a new XMLHttpRequest object.
+-> abort() : Cancels the current request.
+-> getAllResponseHeaders() : Returns header information.
+-> getResponseHeader() : Returns specific header information.
+-> open(method,url,async,user,psw) : 	Specifies the request.
+										method: the request type GET or POST
+										url: the file location
+										async: true (asynchronous) or false (synchronous)
+										user: optional user name
+										psw: optional password
+-> send() : Sends the request to the server (Used for GET requests).
+-> send(string) : Sends the request to the server (Used for POST requests).
+-> setRequestHeader() : Adds a label/value pair to the header to be sent.
+---------------------------------------------------------------------------------------------
+AJAX - Send a Request To a Server :
+
+-> This three method will use to send request to the serve...
+open(): 
+send(): for GET.
+send(string): for POST.
+---------------------------------------------------------------------------------------------
+AJAX - Server Response :
+
+function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML =
+            this.responseText;
+       }
+    };
+    xhttp.open("GET", "ajax_info.txt", true);
+    xhttp.send();								
+}
+
+
+/* This is code to get server response. */
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("demo").innerHTML =
+        this.responseText;
+    }
+};
