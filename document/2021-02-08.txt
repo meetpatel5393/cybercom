@@ -1,0 +1,1 @@
+Today i have done php CRUD application with two different method like first one is as same as specified in document of task and another one is implement by myself means i have optimized code as much as possible and apply some session cocept on that so the application is more dynamic and less file consists.
