@@ -1,0 +1,22 @@
+th {
+	background: rgba(0,0,0,0.1);
+	text-align: left;
+}
+td {
+	text-align: left;
+}
+#createContact_div p{
+	padding: 0px;
+	margin: 0px;
+}
+#createContact_div input {
+	width: 80%;
+	margin-bottom: 15px;
+	margin-top: 5px;
+}
+.errorMessage {
+	color: red;
+	font-size: 13px;
+	padding: 0px;
+	margin: 0px;
+}
