@@ -1,0 +1,1 @@
+Basically today i have practice on upcoming php evaluation like practice on sql quries , class, namespace and etc.
