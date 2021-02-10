@@ -1,3 +1,0 @@
-Today i have video from today task and practice on that topic like ajax..
-
-In ajax how we send data from ajax to server and how we get data back from server that i have practice on and read about their status and statuscode.
